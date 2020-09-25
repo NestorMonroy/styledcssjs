@@ -1,23 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import styled from 'styled-components';
+
+import {Card} from './card.component';
+
 import './App.css';
+
+const Text = styled.div`
+  color:white;
+  font-size:24px;
+  border: ${( {isActive} ) => isActive ? '1px solid black': '3px dotted pink' }
+`
+const textStyles = {
+  color:'white',
+  fontSize: '24px'
+};
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Card> 
+          <Text isActive={false} >
+            i'm component
+          </Text>  
+        </Card>
       </header>
     </div>
   );
